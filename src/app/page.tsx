@@ -11,6 +11,7 @@ import HeroSection from "@/sections/HeroSection";
 import AboutMeSection from "@/sections/AboutMeSection";
 import ProjectAccordion from "@/sections/components/ProjectAccordion";
 import ExperienceSection from "@/sections/ExperienceSection";
+import ScrollToTopButton from "@/sections/components/ScrollToTopButton";
 
 const heroImages = [
   { src: "/project1.jpg", alt: "프로젝트1" },
@@ -269,6 +270,7 @@ tkddyd1259@gmail.com 📧 언제든지 편하게 연락 주세요! 😊`}
           </FullpageSection>
         </FullPageSections>
       </Fullpage>
+      <ScrollToTopButton />
     </div>
   );
 }
