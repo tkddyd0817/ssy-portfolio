@@ -7,9 +7,15 @@ import Fullpage, {
 import Head from "next/head";
 import clsx from "clsx";
 import AnimatedEmojiBackground from "@/sections/AnimatedEmojiBackground";
+import HeroSection from "@/sections/HeroSection";
 
 
-
+const heroImages = [
+  { src: "/project1.jpg", alt: "프로젝트1" },
+  { src: "/project2.jpg", alt: "프로젝트2" },
+  { src: "/project3.jpg", alt: "프로젝트3" },
+  { src: "/project4.jpg", alt: "프로젝트4" },
+];
 
 export default function Home() {
  
@@ -53,7 +59,7 @@ export default function Home() {
           {/* Hero Section */}
           <FullpageSection style={{ height: "100vh" }}>
             <section className="flex flex-col items-center justify-center h-full">
-            
+            <HeroSection images={heroImages} />
             </section>
           </FullpageSection>
           {/* About Me Section */}
