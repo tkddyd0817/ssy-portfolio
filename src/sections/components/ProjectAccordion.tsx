@@ -1,22 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ProjectAccordionProps } from "@/sections/types/Project";
 
-type Project = {
-  name: string;
-  period: string;
-  desc: string;
-  stack: string[];
-  role: string[];
-  troubleshooting?: string[];
-  github: string;
-  link: string;
-  images: string[];
-};
-
-interface ProjectAccordionProps {
-  projects: Project[];
-}
 
 export default function ProjectAccordion({ projects }: ProjectAccordionProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);

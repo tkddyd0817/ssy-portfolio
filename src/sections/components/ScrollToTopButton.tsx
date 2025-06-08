@@ -1,11 +1,8 @@
 "use client";
+import { ScrollToTopButtonProps } from "@/sections/types/ScrollToTopButtonProps";
 import  { useState, useEffect } from "react";
 
-// 타입 정의
-interface ScrollToTopButtonProps {
-  threshold?: number;  // 버튼이 나타나는 스크롤 임계값
-  smoothScroll?: boolean;  // 부드러운 스크롤 사용 여부
-}
+
 
 const ScrollToTopButton: React.FC<ScrollToTopButtonProps> = ({
   threshold = 300,

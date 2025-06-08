@@ -1,8 +1,9 @@
+import Description from "@/intro/components/Description";
+import Initials from "@/intro/components/Initials";
+import LoadingIndicator from "@/intro/components/LoadingIndicator";
+import LoadingMessage from "@/intro/components/LoadingMessage";
 import React, { useState, useEffect } from "react";
-import LoadingIndicator from "./components/LoadingIndicator";
-import Initials from "./components/Initials";
-import Description from "./components/Description";
-import LoadingMessage from "./components/LoadingMessage";
+
 
 export default function IntroSplash() {
   const [chargeLevel, setChargeLevel] = useState(0);

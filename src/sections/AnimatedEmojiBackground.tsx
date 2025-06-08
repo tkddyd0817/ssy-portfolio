@@ -1,10 +1,14 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { AnimatedEmojiBackgroundProps } from "@/sections/types/emoji";
+
 
 // 사용할 이모지들
-const emojis = ['🚀', '💻', '🖥️', '🧑‍🚀', '✨', '⭐', '💡', '⚙️', '🔌'];
+const emojis = ["🚀", "💻", "🖥️", "🧑‍🚀", "✨", "⭐", "💡", "⚙️", "🔌"];
 
-function AnimatedEmojiBackground () {
+
+
+function AnimatedEmojiBackground({ density = 1 }: AnimatedEmojiBackgroundProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const animatedElements = useRef(new Set<HTMLDivElement>());
 
@@ -16,13 +20,13 @@ function AnimatedEmojiBackground () {
     }
 
     // 배경 스타일 유지
-    container.style.width = '100%';
-    container.style.height = '100%';
-    container.style.position = 'absolute';
-    container.style.top = '0';
-    container.style.left = '0';
-    container.style.overflow = 'hidden';
-    container.style.pointerEvents = 'none';
+    container.style.width = "100%";
+    container.style.height = "100%";
+    container.style.position = "absolute";
+    container.style.top = "0";
+    container.style.left = "0";
+    container.style.overflow = "hidden";
+    container.style.pointerEvents = "none";
 
     // 컨테이너 크기 계산 함수 (리사이즈 대응)
     const getContainerSize = () => ({
@@ -38,11 +42,12 @@ function AnimatedEmojiBackground () {
       const emoji = emojis[Math.floor(Math.random() * emojis.length)];
 
       // div 생성
-      const element = document.createElement('div');
-      element.style.position = 'absolute';
-      element.style.pointerEvents = 'none';
-      element.style.userSelect = 'none';
-      element.style.fontFamily = 'Apple Color Emoji,Segoe UI Emoji,NotoColorEmoji,Segoe UI Symbol,Android Emoji,EmojiSymbols,sans-serif';
+      const element = document.createElement("div");
+      element.style.position = "absolute";
+      element.style.pointerEvents = "none";
+      element.style.userSelect = "none";
+      element.style.fontFamily =
+        "Apple Color Emoji,Segoe UI Emoji,NotoColorEmoji,Segoe UI Symbol,Android Emoji,EmojiSymbols,sans-serif";
 
       // 랜덤 크기/투명도/회전
       const size = gsap.utils.random(24, 48); // px
@@ -83,14 +88,15 @@ function AnimatedEmojiBackground () {
       animatedElements.current.add(element);
 
       // 애니메이션 타임라인 (아래로 떨어지며 흔들림/회전/페이드아웃)
-      gsap.timeline({
-        onComplete: () => {
-          if (container.contains(element)) {
-            container.removeChild(element);
-            animatedElements.current.delete(element);
-          }
-        }
-      })
+      gsap
+        .timeline({
+          onComplete: () => {
+            if (container.contains(element)) {
+              container.removeChild(element);
+              animatedElements.current.delete(element);
+            }
+          },
+        })
         .to(element, {
           x: endX,
           y: endY,
@@ -99,26 +105,26 @@ function AnimatedEmojiBackground () {
           duration: duration,
           ease: "linear",
         });
-
     };
 
     // 초기 이모지 스노우 생성
-    const initialElements = 40;
+    const initialElements = 40 * density; // 기본 40, density만큼 곱
     for (let i = 0; i < initialElements; i++) {
       gsap.delayedCall(gsap.utils.random(0, 2), createEmojiSnow);
     }
 
     // 주기적으로 새로운 이모지 스노우 생성
-    const elementCreationInterval = setInterval(createEmojiSnow, 300);
-
-    // 리사이즈 대응 (옵션)
-    // window.addEventListener('resize', ...); // 필요시 구현
+    const elementCreationInterval = setInterval(() => {
+      for (let i = 0; i < density; i++) {
+        createEmojiSnow();
+      }
+    }, 300);
 
     // cleanup
     return () => {
       clearInterval(elementCreationInterval);
       if (container) {
-        animatedElements.current.forEach(element => {
+        animatedElements.current.forEach((element) => {
           gsap.killTweensOf(element);
           if (container.contains(element)) {
             container.removeChild(element);
@@ -128,16 +134,9 @@ function AnimatedEmojiBackground () {
       }
       gsap.killTweensOf(createEmojiSnow);
     };
+  }, [density]);
 
-  }, []);
-
-  return (
-    <div ref={containerRef} />
-  );
+  return <div ref={containerRef} />;
 }
 
-export default AnimatedEmojiBackground
-;
-
-
-
+export default AnimatedEmojiBackground;

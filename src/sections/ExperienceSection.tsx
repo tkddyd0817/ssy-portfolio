@@ -1,15 +1,10 @@
 import React from 'react'
 import { motion } from "framer-motion";
+import { ExperienceSectionProps } from '@/sections/types/experience';
 
-interface Experience {
-  name: string;
-  period: string;
-  desc: string;
-}
 
-interface ExperienceSectionProps {
-  experiences: Experience[];
-}
+
+
 function ExperienceSection({ experiences }: ExperienceSectionProps) {
   return (
       <div className="flex flex-col items-center justify-center h-full">

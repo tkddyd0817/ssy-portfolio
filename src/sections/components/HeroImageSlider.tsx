@@ -3,10 +3,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import Image from "next/image";
+import { HeroImageSliderProps } from "@/sections/types/HeroImageSliderProps";
 
-interface HeroImageSliderProps {
-  images: { src: string; alt: string }[];
-}
+
 
 export default function HeroImageSlider({ images }: HeroImageSliderProps) {
   return (

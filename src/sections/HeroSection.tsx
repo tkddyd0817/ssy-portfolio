@@ -1,10 +1,8 @@
 import HeroImageSlider from "@/sections/components/HeroImageSlider";
+import { HeroSectionProps } from "@/sections/types/HeroSectionProps";
 import React from "react";
 
 
-interface HeroSectionProps {
-  images: { src: string; alt: string }[];
-}
 
 export default function HeroSection({ images }: HeroSectionProps) {
   return (
