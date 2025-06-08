@@ -12,6 +12,8 @@ import AboutMeSection from "@/sections/AboutMeSection";
 import ProjectAccordion from "@/sections/components/ProjectAccordion";
 import ExperienceSection from "@/sections/ExperienceSection";
 import ScrollToTopButton from "@/sections/components/ScrollToTopButton";
+import IntroSplash from "@/intro/IntroSplash";
+import { useEffect, useState } from "react";
 
 const heroImages = [
   { src: "/project1.jpg", alt: "프로젝트1" },
@@ -160,6 +162,15 @@ const experiences = [
 ];
 
 export default function Home() {
+   const [showIntro, setShowIntro] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowIntro(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (showIntro) return <IntroSplash />;
+
   return (
     <div
       className={clsx(
