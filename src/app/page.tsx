@@ -8,6 +8,7 @@ import Head from "next/head";
 import clsx from "clsx";
 import AnimatedEmojiBackground from "@/sections/AnimatedEmojiBackground";
 import HeroSection from "@/sections/HeroSection";
+import AboutMeSection from "@/sections/AboutMeSection";
 
 
 const heroImages = [
@@ -65,7 +66,7 @@ export default function Home() {
           {/* About Me Section */}
           <FullpageSection style={{ height: "100vh" }}>
             <section className="flex flex-col items-center justify-center h-full">
-            
+             <AboutMeSection />
             </section>
           </FullpageSection>
           {/* Projects Section */}
