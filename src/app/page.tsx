@@ -6,6 +6,7 @@ import Fullpage, {
 } from "@ap.cx/react-fullpage";
 import Head from "next/head";
 import clsx from "clsx";
+import AnimatedEmojiBackground from "@/sections/AnimatedEmojiBackground";
 
 
 
@@ -24,13 +25,29 @@ export default function Home() {
         <title>신상용 의 포트폴리오</title>
       </Head>
       <Fullpage>
-        <FullpageNavigation />{" "}
-        {/* // ← 이 부분이 오른쪽 도트 네비게이션입니다! */}
+        <FullpageNavigation />{" "}  {/* // ← 이 부분이 오른쪽 도트 네비게이션입니다! */}
         <FullPageSections>
           {/* 이목을 끌어주는 최상단섹션 */}
           <FullpageSection style={{ height: "100vh" }}>
             <section className="relative flex flex-col items-center justify-center h-screen overflow-hidden bg-gradient-to-tr from-[#181828] via-[#23243a] to-[#0a0a1a]">
-             
+               
+              <AnimatedEmojiBackground />
+            
+              <AnimatedEmojiBackground />
+
+              {/* 중앙 텍스트 오버레이 */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none">
+                <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-3 text-center">
+                  Welcome! 👋
+                  <span className="block text-blue-200 mt-1">
+                    신상용의 프론트엔드 포트폴리오
+                  </span>
+                </h1>
+                <p className="text-base md:text-lg text-gray-200 text-center max-w-lg">
+                  이 페이지는 저의 성장, 경험, 그리고 기술에 대한 열정을
+                  담았습니다.
+                </p>
+              </div>
             </section>
           </FullpageSection>
           {/* Hero Section */}
