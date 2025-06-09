@@ -53,6 +53,7 @@ my-app/
 └── yarn.lock # yarn 패키지 lock 파일
 
 
+
 🛠️ 주요 기술 스택 및 라이브러리
 Next.js (App Router, SSR/SSG 지원)
 React 18
