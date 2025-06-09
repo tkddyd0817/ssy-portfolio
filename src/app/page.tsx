@@ -48,15 +48,14 @@ export default function Home() {
           <FullpageSection style={{ height: "100vh" }}>
             <section className="relative flex flex-col items-center justify-center h-screen overflow-hidden bg-gradient-to-tr from-[#181828] via-[#23243a] to-[#0a0a1a]">
               <AnimatedEmojiBackground density={2} />
-
               <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none">
-                <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-3 text-center">
+                 <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white mb-2 sm:mb-3 text-center leading-tight">
                   Welcome! 👋
                   <span className="block text-blue-200 mt-1">
                     신상용의 프론트엔드 포트폴리오
                   </span>
                 </h1>
-                <p className="text-base md:text-lg text-gray-200 text-center max-w-lg">
+                     <p className="text-sm sm:text-base md:text-lg text-gray-200 text-center max-w-xs sm:max-w-lg">
                   이 페이지는 저의 성장, 경험, 그리고 기술에 대한 열정을
                   담았습니다.
                 </p>
@@ -65,22 +64,24 @@ export default function Home() {
           </FullpageSection>
           {/* Hero Section */}
           <FullpageSection style={{ height: "100vh" }}>
-            <section className="flex flex-col items-center justify-center h-full">
+          <section className="flex flex-col items-center justify-center min-h-screen px-5 py-8">
               <HeroSection images={heroImages} />
             </section>
           </FullpageSection>
           {/* About Me Section */}
           <FullpageSection style={{ height: "100vh" }}>
-            <section className="flex flex-col items-center justify-center h-full">
+            <section className="flex flex-col items-center justify-center min-h-screen px-5 py-8">
+            {/* <section className="flex flex-col items-center justify-center h-full"> */}
               <AboutMeSection />
             </section>
           </FullpageSection>
           {/* Projects Section */}
           <FullpageSection style={{ height: "100vh" }}>
-            <section className="flex flex-col items-center justify-center h-full pt-16">
-              <h2 className="text-2xl font-semibold  text-blue-200 mb-6">
+            <section className="flex flex-col items-center justify-center min-h-screen px-5 py-8 pt-8">
+            {/* <section className="flex flex-col items-center justify-center h-full pt-16"> */}
+             <h2 className="text-xl sm:text-2xl font-semibold text-blue-200 mb-4 sm:mb-6">
                 프로젝트
-                <span className="ml-2 text-base font-normal text-gray-400">
+               <span className=" ml-2 text-sm sm:text-base font-normal text-gray-400">
                   {projects.length}개
                 </span>
               </h2>
@@ -89,7 +90,8 @@ export default function Home() {
           </FullpageSection>
           {/* Experience Section */}
           <FullpageSection style={{ height: "100vh" }}>
-            <section className="flex flex-col items-center justify-center h-full">
+            <section className="flex flex-col items-center justify-center min-h-screen px-5 py-8">
+            {/* <section className="flex flex-col items-center justify-center h-full"> */}
               <ExperienceSection experiences={experiences} />
             </section>
           </FullpageSection>
