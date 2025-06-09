@@ -80,7 +80,7 @@ export default function Home() {
             <section className="flex flex-col items-center justify-center h-full pt-16">
               <h2 className="text-2xl font-semibold  text-blue-200 mb-6">
                 프로젝트
-                <span className="text-base font-normal text-gray-400">
+                <span className="ml-2 text-base font-normal text-gray-400">
                   {projects.length}개
                 </span>
               </h2>
