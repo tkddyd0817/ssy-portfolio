@@ -71,14 +71,12 @@ export default function Home() {
           {/* About Me Section */}
           <FullpageSection style={{ height: "100vh" }}>
             <section className="flex flex-col items-center justify-center min-h-screen px-5 py-8">
-            {/* <section className="flex flex-col items-center justify-center h-full"> */}
               <AboutMeSection />
             </section>
           </FullpageSection>
           {/* Projects Section */}
           <FullpageSection style={{ height: "100vh" }}>
             <section className="flex flex-col items-center justify-center min-h-screen px-5 py-8 pt-8">
-            {/* <section className="flex flex-col items-center justify-center h-full pt-16"> */}
              <h2 className="text-xl sm:text-2xl font-semibold text-blue-200 mb-4 sm:mb-6">
                 프로젝트
                <span className=" ml-2 text-sm sm:text-base font-normal text-gray-400">
