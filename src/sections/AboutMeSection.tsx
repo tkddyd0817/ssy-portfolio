@@ -42,15 +42,14 @@ export default function AboutMeSection() {
         {/* 소개글 + 스택 */}
         <div className="flex-1 w-full">
           <div className="text-sm sm:text-base leading-relaxed text-gray-100 dark:text-gray-200 whitespace-pre-line mb-4 text-center md:text-left">
-            {`저는 "내가 좋아하는 일이 뭘까?"라는 고민 끝에 개발이라는 새로운 분야에 도전하게 되었습니다.
-비전공자임에도 불구하고, 체계적인 커리큘럼의 부트캠프를 수료하며 매일 꾸준히 학습하고, 실제 서비스를 만드는 프로젝트에 적극적으로 참여했습니다.
-무한스크롤 기능과 React Hook Form, Zod를 활용한 폼 검증을 처음 접했음에도 불구하고
-문서와 레퍼런스를 참고하여 빠르게 습득했고,
-기한 내에 안정적으로 해당 기능들을 구현하여 팀원들에게 신뢰를 얻었습니다.
-저의 강점은 타인의 감정을 잘 이해하고, 원만한 관계를 형성하는 소통 능력입니다.
-예를 들어, 프로젝트 진행 중 팀원 간의 의견 차이가 있었을 때, 각자의 입장을 경청하고 중재하여 모두가 만족할 수 있는 방향으로 조율한 경험이 있습니다.
-이러한 경험을 바탕으로, 앞으로도 실무에서 팀원들과 적극적으로 소통하며 함께 성장하고,
-팀의 목표 달성에 기여하는 개발자가 되고 싶습니다.`}
+            {`“새로운 도전, 빠른 성장, 그리고 팀과의 시너지.”
+
+비전공자에서 개발자로, 저는 부트캠프를 통해 매일 성장하는 법을 배웠습니다.
+무한스크롤, React Hook Form, Zod 등 처음 접하는 기술도 스스로 학습해 직접 구현했고,
+프로젝트에서는 팀원 간의 갈등을 조율하며 모두가 만족하는 결과를 이끌어냈습니다.
+
+저는 기술과 소통, 두 가지 모두에 강점이 있습니다.
+앞으로도 팀과 함께 성장하며, 변화를 두려워하지 않는 개발자가 되겠습니다.`}
           </div>
           <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-3 mb-2">
             <span className="flex items-center gap-1 px-3 py-1 rounded bg-blue-100 text-blue-800 font-semibold text-xs sm:text-sm">
@@ -74,5 +73,3 @@ export default function AboutMeSection() {
     </div>
   );
 }
-
-
