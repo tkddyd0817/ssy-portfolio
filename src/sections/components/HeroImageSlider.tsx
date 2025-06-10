@@ -24,6 +24,7 @@ export default function HeroImageSlider({ images }: HeroImageSliderProps) {
               className="object-cover rounded-xl"
               sizes="(max-width: 640px) 100vw, 640px"
               priority={idx === 0}
+              quality={100} 
             />
           </div>
         </SwiperSlide>
