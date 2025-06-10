@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ProjectAccordionProps } from "@/sections/types/Project";
 
-
 export default function ProjectAccordion({ projects }: ProjectAccordionProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -38,7 +37,7 @@ export default function ProjectAccordion({ projects }: ProjectAccordionProps) {
             className={`absolute left-0 right-0 cursor-pointer rounded-tl-3xl rounded-tr-xl rounded-br-3xl rounded-bl-xl bg-gradient-to-b  ${
               isActive
                 ? "from-cyan-500 to-blue-600 text-gray-900 shadow-2xl z-30"
-                : "from-gray-900 to-gray-800 text-gray-300 shadow-md z-10" 
+                : "from-gray-900 to-gray-800 text-gray-300 shadow-md z-10"
             } flex flex-col px-6 py-4 overflow-hidden`}
             style={{ top }}
             layout
@@ -54,25 +53,26 @@ export default function ProjectAccordion({ projects }: ProjectAccordionProps) {
             <div className="flex justify-between items-center h-[80px]">
               <h3
                 className={`text-2xl font-extrabold ${
-                  isActive ? "text-gray-900" : "text-gray-300" 
+                  isActive ? "text-gray-900" : "text-gray-300"
                 }`}
               >
                 {project.name}
               </h3>
               <span
                 className={`text-xl font-semibold ${
-                  isActive ? "text-gray-900" : "text-gray-300" 
+                  isActive ? "text-gray-900" : "text-gray-300"
                 }`}
               >
                 {String(index + 1).padStart(2, "0")}/
               </span>
             </div>
+
             <div className="flex gap-[5px] font-semibold">
               <a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline bg-gray-700 text-gray-200 rounded-full px-3 py-1 text-xs" 
+                className="hover:underline bg-black text-white rounded-full px-3 py-1 text-xs"
               >
                 Github
               </a>
@@ -80,7 +80,7 @@ export default function ProjectAccordion({ projects }: ProjectAccordionProps) {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline bg-gray-700 text-gray-200 rounded-full px-3 py-1 text-xs" 
+                className="hover:underline bg-blue-600 text-white rounded-full px-3 py-1 text-xs"
               >
                 서비스
               </a>
