@@ -121,16 +121,22 @@ export default function ProjectAccordion({ projects }: ProjectAccordionProps) {
           disabled={currentPage === 1}
           className="px-3 py-1 rounded bg-gray-700 text-white disabled:opacity-50"
         >
-          이전
+          <span aria-hidden="true">←</span> 이전
         </button>
         {/* 페이지 번호 버튼 */}
-        {Array.from({ length: Math.min(maxButtonsToShow, totalPages - startButtonIndex) }).map((_, i) => {
+        {Array.from({
+          length: Math.min(maxButtonsToShow, totalPages - startButtonIndex),
+        }).map((_, i) => {
           const pageNum = startButtonIndex + i + 1;
           return (
             <button
               key={pageNum}
               onClick={() => goToPage(pageNum)}
-              className={`px-3 py-1 rounded ${currentPage === pageNum ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700"}`}
+              className={`px-3 py-1 rounded ${
+                currentPage === pageNum
+                  ? "bg-blue-500 text-white"
+                  : "bg-gray-200 text-gray-700"
+              }`}
             >
               {pageNum}
             </button>
@@ -141,10 +147,9 @@ export default function ProjectAccordion({ projects }: ProjectAccordionProps) {
           disabled={currentPage === totalPages}
           className="px-3 py-1 rounded bg-gray-700 text-white disabled:opacity-50"
         >
-          다음
+          다음 <span aria-hidden="true">→</span>
         </button>
       </div>
     </div>
   );
 }
-
