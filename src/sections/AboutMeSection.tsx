@@ -1,11 +1,12 @@
 import React from "react";
-import { FaGithub, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaEnvelope, FaDatabase } from "react-icons/fa";
 import {
   SiReact,
   SiNextdotjs,
   SiTypescript,
   SiTailwindcss,
   SiJavascript,
+  SiRedux,
 } from "react-icons/si";
 
 export default function AboutMeSection() {
@@ -66,6 +67,13 @@ export default function AboutMeSection() {
             </span>
             <span className="flex items-center gap-1 px-3 py-1 rounded bg-yellow-100 text-yellow-800 font-semibold text-xs sm:text-sm">
               <SiJavascript className="text-yellow-500" /> JavaScript
+            </span>
+            <span className="flex items-center gap-1 px-3 py-1 rounded bg-purple-100 text-purple-800 font-semibold text-xs sm:text-sm">
+              <SiRedux className="text-purple-500" /> Redux Toolkit
+            </span>
+            {/* localStorage */}
+            <span className="flex items-center gap-1 px-3 py-1 rounded bg-orange-100 text-orange-800 font-semibold text-xs sm:text-sm">
+              <FaDatabase className="text-orange-500" /> localStorage
             </span>
           </div>
         </div>

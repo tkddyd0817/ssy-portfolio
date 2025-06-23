@@ -1,6 +1,6 @@
 import { Project } from "@/sections/types/Project";
 
-const projects:Project[] = [
+const projects: Project[] = [
   {
     name: "HOLO",
     period: "2024.12 - 2025.02",
@@ -118,6 +118,82 @@ const projects:Project[] = [
     link: "https://outsourcing-olive.vercel.app/",
     images: ["/project4.jpg"],
   },
+    {
+    name: "household-book-main",
+    period: "2024.04 - 2024.06",
+    desc: `● 프로젝트 소개: 다국어 지원, 반응형 레이아웃, 스켈레톤 UI, 입력 UX, 애니메이션, 타입 분리 등 다양한 프론트엔드 개선을 단계별로 적용한 가계부 웹앱입니다. 커밋 메시지와 폴더 구조 등 협업/유지보수에 유리한 패턴을 도입하였으며, Google Lighthouse 기준 성능·접근성·SEO 100점 달성.\n● 사용한 기술스택: Next.js, React 19, TypeScript, Redux Toolkit, React-Redux, Tailwind CSS, GSAP, react-datepicker, date-fns/locale, i18next, react-i18next, next-i18next, chart.js, react-chartjs-2, chartjs-plugin-datalabels, localStorage`,
+    stack: [
+      "Next.js",
+      "React 19",
+      "TypeScript",
+      "Redux Toolkit",
+      "React-Redux",
+      "Tailwind CSS",
+      "GSAP",
+      "react-datepicker",
+      "date-fns/locale",
+      "i18next",
+      "react-i18next",
+      "next-i18next",
+      "chart.js",
+      "react-chartjs-2",
+      "chartjs-plugin-datalabels",
+      "localStorage",
+    ],
+    role: [
+      "다국어(i18n) 지원 및 언어별 날짜 포맷 자동 변환",
+      "반응형 레이아웃: 데스크탑/모바일에서 필터, 폼, 리스트 등 자동 전환",
+      "스켈레톤 UI(HomeSkeleton, SkeletonBox)로 데이터 로딩 시 UX 강화",
+      "입력 UX 개선: 금액 입력 시 앞자리 0 자동 제거, 숫자만 입력",
+      "GSAP 기반 인트로 애니메이션(AnimatedEmojiIntro, MoneyChargeBar)",
+      "컴포넌트별 타입 분리 및 폴더 구조 개선",
+      "Redux 상태와 localStorage 동기화로 데이터 영속성 제공",
+      "Google Lighthouse 기준 성능·접근성·SEO 100점 달성",
+    ],
+    troubleshooting: [
+      "next-i18next와 react-i18next 설정 충돌 해결",
+      "Redux 상태와 localStorage 동기화 시 데이터 초기화 문제 해결",
+      "Tailwind 반응형 레이아웃에서 모바일/데스크탑 UI 깨짐 현상 수정",
+      "react-datepicker의 다국어 날짜 포맷 적용 오류 해결",
+      "chart.js 파이차트에서 데이터 라벨 겹침 문제 해결",
+      "useEffect 중복 제거 및 useState 관리 최적화",
+    ],
+    github: "https://github.com/tkddyd0817/household-book-main",
+    link: "https://household-book-main.vercel.app/",
+    images: ["/project5.jpg"], // 실제 이미지 경로로 교체 필요
+  },
+  // {
+  //   name: "Kicks Archive(개발중)",
+  //   period: "2024.03 - 2024.04",
+  //   desc: `● 프로젝트 소개: Sneaks API를 활용한 스니커즈 및 의류 아카이브 플랫폼. 사용자들은 발매 예정 및 과거 발매된 아이템들을 검색하고, 자신의 취향에 맞는 제품을 찾을 수 있습니다.\n● 사용한 기술스택: Next.js, TypeScript, React, TanstackQuery, Zustand, TailWind CSS, React Hook Form, zod, vercel, Sneaks API`,
+  //   stack: [
+  //     "Next.js",
+  //     "TypeScript",
+  //     "React",
+  //     "TanstackQuery",
+  //     "Zustand",
+  //     "TailWind CSS",
+  //     "React Hook Form",
+  //     "zod",
+  //     "vercel",
+  //     "Sneaks API",
+  //   ],
+  //   role: [
+  //     "Sneaks API를 활용한 스니커즈 및 의류 정보 검색 기능 구현",
+  //     "발매 예정 및 과거 발매된 아이템 필터링 및 정렬 기능",
+  //     "상세 페이지에서 제품 정보, 가격 변동, 리뷰 등 제공",
+  //     "사용자 취향 기반 추천 시스템 구현",
+  //     "반응형 디자인으로 모바일 및 데스크톱 환경 최적화",
+  //     "TanstackQuery를 활용한 효율적인 데이터 캐싱 및 상태 관리",
+  //   ],
+  //   troubleshooting: [
+  //     "API 요청 제한으로 인한 데이터 로딩 지연: TanstackQuery의 캐싱 전략 최적화",
+  //     "이미지 로딩 최적화: Next.js Image 컴포넌트와 lazy loading 적용",
+  //   ],
+  //   github: "https://github.com/tkddyd0817/kicks-archive",
+  //   link: "https://kicks-archive.vercel.app",
+  //   images: ["/project5.jpg"],
+  // },
 ];
 
-export default projects
+export default projects;
