@@ -118,9 +118,9 @@ const projects: Project[] = [
     link: "https://outsourcing-olive.vercel.app/",
     images: ["/project4.jpg"],
   },
-    {
+  {
     name: "household-book-main",
-    period: "2024.04 - 2024.06",
+    period: "2025.06.18 - 2025.06.23",
     desc: `● 프로젝트 소개: 다국어 지원, 반응형 레이아웃, 스켈레톤 UI, 입력 UX, 애니메이션, 타입 분리 등 다양한 프론트엔드 개선을 단계별로 적용한 가계부 웹앱입니다. 커밋 메시지와 폴더 구조 등 협업/유지보수에 유리한 패턴을 도입하였으며, Google Lighthouse 기준 성능·접근성·SEO 100점 달성.\n● 사용한 기술스택: Next.js, React 19, TypeScript, Redux Toolkit, React-Redux, Tailwind CSS, GSAP, react-datepicker, date-fns/locale, i18next, react-i18next, next-i18next, chart.js, react-chartjs-2, chartjs-plugin-datalabels, localStorage`,
     stack: [
       "Next.js",
@@ -164,7 +164,7 @@ const projects: Project[] = [
   },
   {
     name: "Kicks Archive(개발중)",
-    period: "2024.03 - 2024.04",
+    period: "2025.06 - 2025.06~",
     desc: `● 프로젝트 소개: Sneaks API를 활용한 스니커즈 및 의류 아카이브 플랫폼. 사용자들은 발매 예정 및 과거 발매된 아이템들을 검색하고, 자신의 취향에 맞는 제품을 찾을 수 있습니다.\n● 사용한 기술스택: Next.js, TypeScript, React, TanstackQuery, Zustand, TailWind CSS, React Hook Form, zod, vercel, Sneaks API`,
     stack: [
       "Next.js",
