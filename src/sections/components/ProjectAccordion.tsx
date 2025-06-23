@@ -2,44 +2,42 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ProjectAccordionProps } from "@/sections/types/Project";
+import usePagination from "@/hooks/usePagination";
 
 export default function ProjectAccordion({ projects }: ProjectAccordionProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const {
+    currentItems: pagedProjects,
+    currentPage,
+    totalPages,
+    nextPage,
+    prevPage,
+    goToPage,
+    startButtonIndex,
+    maxButtonsToShow,
+  } = usePagination(projects, 4);
 
   const collapsedHeight = 120;
   const expandedHeight = 320;
-  const gap = 4;
-
-  const containerHeight =
-    collapsedHeight * projects.length +
-    (expandedHeight - collapsedHeight) +
-    gap * (projects.length - 1);
+  // const gap = 4;
 
   return (
-    <motion.div
-      className="relative w-full max-w-3xl mx-auto mt-10 select-none"
-      style={{ height: containerHeight }}
-      layout
-    >
-      {projects.map((project, index) => {
-        const isActive = index === activeIndex;
-
-        let top = index * (collapsedHeight + gap);
-        if (activeIndex !== null && index > activeIndex) {
-          top += expandedHeight - collapsedHeight;
-        }
+    <div className="w-full max-w-3xl mx-auto mt-10 select-none">
+      {pagedProjects.map((project, index) => {
+        // 전체 projects의 index를 계산해야 activeIndex가 정상 동작
+        const realIndex = (currentPage - 1) * 4 + index;
+        const isActive = realIndex === activeIndex;
 
         return (
           <motion.div
             key={project.name}
-            onMouseEnter={() => setActiveIndex(index)}
+            onMouseEnter={() => setActiveIndex(realIndex)}
             onMouseLeave={() => setActiveIndex(null)}
-            className={`absolute left-0 right-0 cursor-pointer rounded-tl-3xl rounded-tr-xl rounded-br-3xl rounded-bl-xl bg-gradient-to-b  ${
+            className={`mb-4 cursor-pointer rounded-tl-3xl rounded-tr-xl rounded-br-3xl rounded-bl-xl bg-gradient-to-b  ${
               isActive
                 ? "from-cyan-500 to-blue-600 text-gray-900 shadow-2xl z-30"
                 : "from-gray-900 to-gray-800 text-gray-300 shadow-md z-10"
             } flex flex-col px-6 py-4 overflow-hidden`}
-            style={{ top }}
             layout
             initial={false}
             animate={{
@@ -63,7 +61,7 @@ export default function ProjectAccordion({ projects }: ProjectAccordionProps) {
                   isActive ? "text-gray-900" : "text-gray-300"
                 }`}
               >
-                {String(index + 1).padStart(2, "0")}/
+                {String(realIndex + 1).padStart(2, "0")}/
               </span>
             </div>
 
@@ -115,6 +113,38 @@ export default function ProjectAccordion({ projects }: ProjectAccordionProps) {
           </motion.div>
         );
       })}
-    </motion.div>
+
+      {/* 페이지네이션 UI */}
+      <div className="flex justify-center gap-2 mt-6">
+        <button
+          onClick={prevPage}
+          disabled={currentPage === 1}
+          className="px-3 py-1 rounded bg-gray-700 text-white disabled:opacity-50"
+        >
+          이전
+        </button>
+        {/* 페이지 번호 버튼 */}
+        {Array.from({ length: Math.min(maxButtonsToShow, totalPages - startButtonIndex) }).map((_, i) => {
+          const pageNum = startButtonIndex + i + 1;
+          return (
+            <button
+              key={pageNum}
+              onClick={() => goToPage(pageNum)}
+              className={`px-3 py-1 rounded ${currentPage === pageNum ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700"}`}
+            >
+              {pageNum}
+            </button>
+          );
+        })}
+        <button
+          onClick={nextPage}
+          disabled={currentPage === totalPages}
+          className="px-3 py-1 rounded bg-gray-700 text-white disabled:opacity-50"
+        >
+          다음
+        </button>
+      </div>
+    </div>
   );
 }
+
